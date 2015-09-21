@@ -1,0 +1,408 @@
+/**
+ * Site header
+ */
+.site-header {
+    border-bottom: 1px solid $grey-color-light;
+    min-height: $header-height;
+    @include clearfix();
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.site-brand {
+    font-size: 20px;
+    // line-height: 1;
+    line-height: $header-height;
+    letter-spacing: 0px;
+    margin-bottom: 0;
+    float: right;
+    font-weight: 300;
+    color: $grey-color-dark;
+
+    .logo-svg {
+        float: right;
+        margin-left: 10px;
+        margin-top: ( ($header-height - $logo-size) / 2) - 3;
+        path {
+            fill: $brand-color;
+        }
+    }
+
+    .site-title {
+        float: right;
+        .home-page & {
+            // display: none;
+        }
+    }
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+    }
+
+    .home-page & {
+        color: $grey-color-dark;
+    }
+}
+
+
+
+.site-nav {
+    float: left;
+    line-height: $header-height;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+        padding: 0 10px;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            // margin-left: 20px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 23px;
+        left: 30px;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: left;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+            min-width: 120px;
+            a {
+                display: block;
+                // border-bottom: 1px solid $border-color;
+            }
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+        }
+    }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: $spacing-unit 0;
+}
+
+.director {
+    color: $grey-color-dark;
+    border-bottom: 1px dotted darken(white, 50);
+    &:visited {
+        color: $grey-color-dark;
+    }
+    &:hover {
+        text-decoration: none;
+        color: $brand-color;
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+    position: relative;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+$post-link-color: darken(white, 70);
+.post-link {
+    display: block;
+    font-size: 23px;
+    color: $post-link-color;
+    text-decoration: none;
+
+    &:visited {
+        color: darken($post-link-color, 0);
+    }
+
+    &:hover {
+        color: darken($brand-color, 0);
+        text-decoration: none;
+    }
+}
+.post-excerpt {
+	// font-size: 11px;
+	// color: $grey-color;
+}
+
+
+
+/**
+ * Intro
+ */
+
+.intro {
+	margin: $spacing-unit*2 0 $spacing-unit*3;
+	// margin-bottom: 120px;
+}
+
+.intro__title {
+	font-size: 23px;
+}
+
+.brand {
+	color: $brand-color;
+
+	a {
+		&:visited {
+			color: $brand-color;
+		}
+	}
+}
+
+.intro__excerpt {
+	margin-bottom: $spacing-unit;
+}
+
+
+
+/**
+ * Posts
+ */
+
+.post-list {
+    .post {
+        margin-bottom: $spacing-unit*2.5;
+    }
+}
+.post-header {
+    margin-bottom: $spacing-unit;
+    .post-list & {
+        margin-bottom: 0;
+    }
+}
+
+.post-title {
+    font-size: 23px;
+    margin-bottom: 0;
+    // letter-spacing: -1px;
+    // line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+    img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 3px;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+    }
+}
+
+.cover {
+    margin-bottom: $spacing-unit/3;
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+/**
+ * Buttons
+ */
+
+.btn {
+    display: inline-block;
+	padding: 10px 40px;
+	border-radius: $radius-size;
+	transition-duration: $transition-duration;
+
+	&:hover {
+		// background: $bg-grey;
+		color: $brand-color;
+	}
+}
+
+.btn--default {
+	border: 1px solid $border-color;
+	&:hover {
+		text-decoration: none;
+		border-color: $brand-color;
+	}
+}
+
+.btn--hire {
+	background: $green-color;
+	color: white;
+	border-color: transparent;
+	&:hover {
+		color: white;
+		text-decoration: none;
+		background: darken($green-color, 7);
+	}
+}
+
+/**
+ * Hire
+ */
+
+.hire {
+	margin-bottom: $spacing-unit;
+}
+
+
+/**
+ * Next and Prev Post
+ */
+
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: right;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: left;
+}
+
+
+
+/**
+ * Pager
+ */
+
+.pager {
+    @include clearfix();
+    list-style: none;
+    margin: 0 0 $spacing-unit;
+    li {
+        a {
+            white-space: nowrap;
+        }
+    }
+}
+
+
+/**
+ * Alert
+ */
+
+.alert {
+    margin: 100px 0;
+    text-align: center;
+}
+.alert__title {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/**
+ * Grid
+ */
+
+.grid {
+    @include row();
+}
+
+.col-1-3 {
+    @include fluid(1 of 3);
+}
+
+
+
+/**
+ * Helpers
+ */
+
+.text-green {
+    color: $green-color;
+}
+
+.img-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}

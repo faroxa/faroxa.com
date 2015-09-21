@@ -1,0 +1,104 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: 'IRANSans-web', Helvetica, Arial, sans-serif;
+$base-font-mono:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$base-font-size:   13px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.95;
+
+$spacing-unit:     30px;
+
+$radius-size:      4px;
+$transition-duration: .1s;
+
+$font-directory:  '../static/font';
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #F44336;
+$blue-color:       #2a7ae2;
+$border-color:     darken(white, 12);
+
+$green-color:      #4CAF50;
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$bg-grey:          darken(white, 5);
+
+$facebook:         #3b5998;
+$twitter:          #00aced;
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+$header-height:    86px;
+$logo-size:        40px;
+
+
+
+
+// Grid System (Developed by Farhad Eidi {farhadeidi.com}{faroxa.com})
+
+$grid-gutter: 10px;
+
+@mixin row {
+    margin-right: (-($grid-gutter/2));
+    margin-left: (-($grid-gutter/2));
+    @include clearfix();
+}
+
+@mixin col-setting() {
+    float: right;
+    padding: 0 $grid-gutter/2;
+}
+
+@mixin fluid( $width: $grid of $all) {
+    $grid: nth($width, 1);
+    $all: nth($width, 3);
+    width: percentage($grid / $all);
+    @include col-setting();
+}
+
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// WebFonts
+/* فونت های ایران یک نرم افزٌار مالکیتی محسوب می شود جهت آٍگاهی ازٌ قوانین استفاده ازٌ این فونت‌ها لطفاً به  وبسایت www.fontiran.com مراجعه نمایید
+** این مجموعه فونت تحت اجازٌه نامه (CR4Y8) در این پروژه استفاده می شود */
+@import "fonts";
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
