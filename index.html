@@ -2,9 +2,24 @@
 layout: default
 ---
 <div class="home">
-	
 	{% if paginator.page > 1 %}
 		<h4 class="text-green">صفحه : {{ paginator.page }}</h4>
+	{% else %}
+		<div class="intro">
+			<h2 class="intro__title">امروز یک تیم هستیم ...</h2>
+			<div class="intro__excerpt">
+				<p>
+					فاروکسا در سال ۱۳۸۷ برای نوشتن درباره وب، طراحی و استانداردها راه‌اندازی شد و به عنوان یک برند شخصی فعالیت خودش را در زمینه طراحی رابط کاربری آغاز کرد. هم‌اکنون پس از سالها تجربه، فاروکسا یک تیم است که به طور تخصصی به ارائه خدمات مهندسی، طراحی و پیاده‌سازی رابط کاربری می‌پردازد. فاروکسا امروز یک تیم شده است تا با ارائه راهکارهای هوشمند و مناسب با متدولوژی‌های روز دنیا در زمینه مهندسی رابط کاربری، راهنما و مجری شرکت‌هایی باشد که نیاز به پیاده‌سازی یک رابط کاربری استاندارد و توسعه‌پذیر دارند. تیم فاروکسا باور دارد که می‌توان با اجرای اصولی یک رابط کاربری، واژه‌ای به نام Redesign را از فرهنگ عمومی طرح‌ها کمرنگ‌تر کرد (برای اطلاعات بیشتر تماس بگیرید)
+				</p>
+				<p>
+					<a href="https://www.linkedin.com/pub/farhad-eidi/43/a93/a71" title="سوابق کاری من در لینکدین">فرهاد عیدی</a><br>
+					۳۱ شهریور ۱۳۹۴
+				</p>
+			</div>
+			<div class="hire">
+				<a href="mailto:info@faroxa.com" class="btn btn--hire">تماس</a>
+			</div>
+		</div>
 	{% endif %}
 	<div class="post-list">
 		{% for post in paginator.posts %}
@@ -19,7 +34,7 @@ layout: default
 				<header class="post-header">
 					<h2 class="post-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
 					<div class="post-meta">
-						{{ post.date | date: "%b %-d, %Y" }}
+						{{ post.date | date: "%Y-%m-%d" }}
 					</div>
 				</header>
 

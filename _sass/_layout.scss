@@ -186,9 +186,12 @@ $post-link-color: darken(white, 70);
  */
 
 .intro {
-	margin: $spacing-unit*2 0 $spacing-unit*3;
+	margin: $spacing-unit 0 $spacing-unit*2;
+    padding: 20px;
 	// margin-bottom: 120px;
-}
+    padding: 15px 20px;
+    background-color: darken(white, 5);
+    border-radius: 4px;}
 
 .intro__title {
 	font-size: 23px;
@@ -307,7 +310,7 @@ $post-link-color: darken(white, 70);
 
 .btn--hire {
 	background: $green-color;
-	color: white;
+	color: white !important;
 	border-color: transparent;
 	&:hover {
 		color: white;
@@ -321,7 +324,7 @@ $post-link-color: darken(white, 70);
  */
 
 .hire {
-	margin-bottom: $spacing-unit;
+	// margin-bottom: $spacing-unit;
 }
 
 
